@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 function FindAvailableRoomsForm() {
-  const nav = useNavigate();
+    const nav = useNavigate();
   
     return (
     <div className="find-form-container">
