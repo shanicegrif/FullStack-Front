@@ -20,8 +20,8 @@ function Bookings() {
           <thead>
           </thead>
             <tbody>
-              {bookings.map((SingleBooking) => (
-                <SingleBooking key={SingleBooking.id} SingleBooking={SingleBooking} />
+              {bookings.map((booking) => (
+                <Booking key={booking.booking_id} Booking={booking} />
               ))}
             </tbody>
         </table>

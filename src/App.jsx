@@ -17,9 +17,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="*" element={<FourOFour />} />
+            <Route path="/bookings" element={<Bookings/>} />
             <Route path="/bookings/new" element={<NewRoom/>} />
-
-          </Routes>
+            <Route path="/meetingRooms" element={<MeetingRooms/>} />
+            <Route path="/meetingRooms/:id" element={<SingleMeetingRoom/>} />
+            <Route path="/meetingRooms/new" element={<NewMeetingRooms/>} />
+            <Route path="/meetingRooms/:id/bookings" element={<BookingDetails/>} />          
+            </Routes>
         </main>
       </Router>
       {/* <Footer /> */}
