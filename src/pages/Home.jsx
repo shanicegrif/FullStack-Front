@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import FindAvailableRoom from '../components/FindAvailableRoom';
+import FindAvailableRoom from '../components/FindAvailableRoomsForm';
 
 const HomePage = () => {
   return (

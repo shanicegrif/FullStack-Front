@@ -3,6 +3,8 @@ import { useNavigate } from "react-router";
 
 function FindAvailableRoomsForm() {
     const nav = useNavigate();
+    const handleSubmit = (event) => {
+        event.preventDefault();
   
     return (
     <div className="find-form-container">
@@ -37,7 +39,7 @@ function FindAvailableRoomsForm() {
         </form>
     </div>
     );
-
+}
 }
 
 export default FindAvailableRoomsForm;
