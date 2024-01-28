@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SingleMeetingRoom from "./SingleMeetingRoom";
 
-const API = import.meta.env.API_URL;
+const API = import.meta.env.VITE_API_URL;
 
 function MeetingRooms() {
   const [meetingRooms, setmeetingRooms] = useState([]);
@@ -16,15 +16,11 @@ function MeetingRooms() {
   return (
     <div className="meetingRooms">
       <section>
-        <table>
-          <thead>
-          </thead>
-          <tbody>
+        <div>
             {meetingRooms.map((meetingRoom) => (
-              <meetingRoom key={meetingRoom.meetingRoom_id} meetingRoom={meetingRoom} />
+              <SingleMeetingRoom key={meetingRoom.meetingRoom_id} meetingRoom={meetingRoom} />
             ))}
-          </tbody>
-        </table>
+        </div>
       </section>
     </div>
   );

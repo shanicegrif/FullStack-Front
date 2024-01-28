@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { postNewRoom } from "../api/fetch";
+// import { postNewRoom } from "../api/fetch";
 import { useNavigate } from "react-router-dom";
 
-export default function NewRoomForm(){
+export default function NewMeetingRoomForm(){
     const [ roomInfo, setRoomInfo ] = useState({
         name:"",
         capacity:0,
@@ -17,13 +17,13 @@ export default function NewRoomForm(){
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        postNewRoom(roomInfo)
-          .then(() => {
-            console.log("create success!");
-            // put nav here
-          })
-          .catch((err) => console.error(err));
-    };
+    //     postNewRoom(roomInfo)
+    //       .then(() => {
+    //         console.log("create success!");
+    //         // put nav here
+    //       })
+    //       .catch((err) => console.error(err));
+    // };
 
     return(
         <div className="new-room-form-container">
@@ -39,4 +39,5 @@ export default function NewRoomForm(){
             </form>
         </div>
     )
+}
 }

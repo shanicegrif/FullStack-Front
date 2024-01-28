@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SingleBooking from "./SingleBooking";
 
-const API = import.meta.env.API_URL;
+const API = import.meta.env.VITE_API_URL;
 
 function Bookings() {
   const [bookings, setBookings] = useState([]);
@@ -16,15 +16,12 @@ function Bookings() {
   return (
     <div className="bookings">
       <section>
-        <table>
-          <thead>
-          </thead>
-            <tbody>
-              {bookings.map((booking) => (
-                <Booking key={booking.booking_id} Booking={booking} />
-              ))}
-            </tbody>
-        </table>
+       <div>
+          {bookings.map((booking) => (
+            <SingleBooking key={booking.booking_id} booking={booking} />
+          ))}
+       </div>
+  
       </section>
     </div>
   );
