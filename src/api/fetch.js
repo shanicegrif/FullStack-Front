@@ -54,17 +54,39 @@ export async function getBookings() {
     return responseData;
   }
 
-export async function getOneBooking(id){
-    return await axios.get(`${URL}/bookings/${id}`);
-};
+  export async function getOneBooking(id) {
+    let responseData;
+    try {
+      const response = await axios.get(`${URL}/bookings/${id}`);
+      responseData = response.data;
+    } catch (error) {
+      console.error(`Error fetching booking with id ${id}:`, error);
+      throw error;
+    }
+    return responseData;
+  }
 
-export async function deleteBooking(id){
-    return await axios.delete(`${URL}/bookings/${id}`);
-};
+  export async function deleteBooking(id) {
+    try {
+      const response = await axios.delete(`${URL}/bookings/${id}`);
+      return response.data; 
+    } catch (error) {
+      console.error(`Error deleting booking with id ${id}:`, error);
+      throw error;
+    }
+  }
 
-export async function postBooking(body){
-    return await axios.post(`${URL}/bookings`, body, {headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-    }});
-};
+  export async function postBooking(body) {
+    try {
+      const response = await axios.post(`${URL}/bookings`, body, {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      });
+      return response.data; 
+    } catch (error) {
+      console.error('Error creating new booking:', error);
+      throw error;
+    }
+  }
