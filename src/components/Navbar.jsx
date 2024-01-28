@@ -4,15 +4,18 @@ export default function NavBar() {
   return (
     <nav>
       <header>Home</header>
-      <button>
-        <Link to="/meetingRooms">Meeting Rooms</Link>
-      </button>
-      <button>
-        <Link to="/bookings">Bookings</Link>
-      </button>
-      <button>
-        <Link to="/meetingRooms/new">New Meeting Rooms</Link>
-      </button>
+      <Link to="/meetingRooms">
+        <button>Meeting Rooms</button>
+      </Link>
+      <Link to="/bookings">
+        <button>Bookings</button>
+      </Link>
+      <Link to="/meetingRooms/new">
+        <button>New Meeting Rooms</button>
+      </Link>
+      <Link to="/neweventspace">
+        <button>New Event Space</button>
+      </Link>
     </nav>
   );
 }
