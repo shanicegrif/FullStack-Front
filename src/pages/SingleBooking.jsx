@@ -6,7 +6,7 @@ const SingleBooking = () => {
 
   return (
     <div>
-
+        <h1> Hello single bookings </h1>
     </div>
 
   )

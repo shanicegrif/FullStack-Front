@@ -1,5 +1,5 @@
 import React from 'react';
-import NewRoomForm from '../components/NewRoomForm';
+import NewRoomForm from '../components/NewMeetingRoomForm';
 
 const NewRoom = () => {
   return (
