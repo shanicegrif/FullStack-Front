@@ -30,4 +30,4 @@ function MeetingRooms() {
   );
 }
 
-export default meetingRooms;
+export default MeetingRooms;

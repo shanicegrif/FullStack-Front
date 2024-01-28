@@ -11,3 +11,5 @@ const SingleBooking = () => {
 
   )
 }
+
+export default SingleBooking;
