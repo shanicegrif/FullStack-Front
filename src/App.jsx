@@ -1,8 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import FourOFour from './pages/FourOFour';
-import Home from "./pages/Home";
 import NavBar from "./components/Navbar"
-import NewRoom from './pages/NewRoom';
+
+import Bookings from "./pages/Bookings";
+import MeetingRooms from "./pages/MeetingRooms";
+import NewMeetingRooms from "./pages/NewMeetingRooms";
+import SingleMeetingRoom from "./pages/SingleMeetingRoom";
+import FourOFour from "./pages/FourOFour";
+import Home from "./pages/Home";
+import NewRoom from "./pages/NewRoom";
+import BookingDetails from "./pages/BookingDetails";
 import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 

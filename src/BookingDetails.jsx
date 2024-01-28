@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const NewMeetingRooms = () => {
+const BookingDetails = () => {
   return (
     <div>
       
@@ -11,9 +11,9 @@ const NewMeetingRooms = () => {
 };
 
 
-NewMeetingRooms.propTypes = {
+BookingDetails.propTypes = {
 
 };
 
 
-export default NewMeetingRooms;
+export default BookingDetails;
