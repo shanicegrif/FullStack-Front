@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
   return (
     <nav>
-      <header>Nifle Towers</header>
+      <header>Home</header>
       <button>
         <Link to="/meetingRooms">Meeting Rooms</Link>
       </button>
