@@ -17,6 +17,14 @@ function MeetingRooms() {
     <div className="meetingRooms">
       <section>
         <div>
+          <h2>Find available rooms</h2>
+          <p>start</p>
+          <p>end</p>
+          <p>floor</p>
+          <p>capacity</p>
+          <button>Find</button>
+        </div>
+        <div>
             {meetingRooms.map((meetingRoom) => (
               <SingleMeetingRoom key={meetingRoom.meetingRoom_id} meetingRoom={meetingRoom} />
             ))}
