@@ -16,12 +16,11 @@ function Bookings() {
   return (
     <div className="bookings">
       <section>
-       <div>
+       <div className="bookings-list">
           {bookings.map((booking) => (
-            <SingleBooking key={booking.booking_id} booking={booking} />
+            <SingleBooking key={booking.id} booking={booking} />
           ))}
        </div>
-  
       </section>
     </div>
   );
