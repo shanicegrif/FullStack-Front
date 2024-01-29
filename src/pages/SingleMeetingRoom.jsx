@@ -1,24 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
 
-
-const SingleMeetingRoom = () => {
+const SingleMeetingRoom = ({ meetingRoom }) => {
+  const { name, capacity, floor } = meetingRoom;
   return (
-    <>
-    <div>
-      <h1> Single meeting room </h1>
-      <p>book room {roominfo}</p>
-      <p>Meeting name</p>
-      <p>start</p>
-      <p>end</p>
-      <p> attendees</p>
-      <button>submit</button>
-    </div>
-      <div>
-        //map through bookings by meeting ID
-      </div>
-    </>
-
+    <article className="meeting-card">
+      <aside className="meeting-card-info">
+        <h3>{name}</h3>
+        <p>Capacity: {capacity}</p>
+        <p>Floor: {floor}</p>
+      </aside>
+    </article>
   );
 };
 
