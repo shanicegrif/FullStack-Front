@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'; // Import PropTypes
 
 import { getMeetingRooms } from '../api/fetch';
 
-const EventSpace = () => {
+const EventSpace = ({name, capacity, fl}) => {
   const { id } = useParams();
   const [eventSpace, setEventSpace] = useState(null);
 
@@ -35,7 +35,7 @@ const EventSpace = () => {
   return (
     <div className="container">
       <h2>{eventSpace.name}</h2>
-      <p>Location: {eventSpace.location}</p>
+      <p>Location: {eventSpace.fl}</p>
       <Link to={`/event-spaces/${id}/edit`}>Edit Event Space</Link>
     </div>
   );
