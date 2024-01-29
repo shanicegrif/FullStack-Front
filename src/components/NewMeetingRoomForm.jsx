@@ -17,13 +17,13 @@ export default function NewMeetingRoomForm(){
     const handleSubmit = (event) => {
         event.preventDefault();
 
-    //     postNewRoom(roomInfo)
-    //       .then(() => {
-    //         console.log("create success!");
-    //         // put nav here
-    //       })
-    //       .catch((err) => console.error(err));
-    // };
+        postNewRoom(roomInfo)
+          .then(() => {
+            console.log("create success!");
+            // put nav here
+          })
+          .catch((err) => console.error(err));
+    };
 
     return(
         <div className="new-room-form-container">
@@ -39,5 +39,4 @@ export default function NewMeetingRoomForm(){
             </form>
         </div>
     )
-}
 }

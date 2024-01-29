@@ -1,19 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
+import NewMeetingRoomForm from '../components/NewMeetingRoomForm';
 
 const NewMeetingRooms = () => {
   return (
-    <div>
-      <h1> Meeting Rooms </h1>
+    <div className="New">
+      <h1>Create a New Room</h1>
+      <NewMeetingRoomForm />
     </div>
   );
 };
-
-
-NewMeetingRooms.propTypes = {
-
-};
-
 
 export default NewMeetingRooms;

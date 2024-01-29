@@ -1,22 +1,22 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getMeetingRooms } from '../api/fetch';
+// import { getMeetingRooms } from '../api/fetch';
 
 const NewEventSpace = () => {
   const [eventSpaces, setEventSpaces] = useState([]);
 
-  useEffect(() => {
-    const fetchNewEventSpaces = async () => {
-      try {
-        const spaces = await getMeetingRooms();
-        setEventSpaces(spaces);
-      } catch (error) {
-        console.error('Error fetching event spaces:', error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchNewEventSpaces = async () => {
+  //     try {
+  //       const spaces = await getMeetingRooms();
+  //       setEventSpaces(spaces);
+  //     } catch (error) {
+  //       console.error('Error fetching event spaces:', error);
+  //     }
+  //   };
 
-    fetchNewEventSpaces();
-  }, []);
+  //   fetchNewEventSpaces();
+  // }, []);
 
   return (
     <div className="container event-space">
