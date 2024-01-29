@@ -35,7 +35,7 @@ const EventSpace = ({name, capacity, fl}) => {
   return (
     <div className="container">
       <h2>{eventSpace.name}</h2>
-      <p>Location: {eventSpace.fl}</p>
+      <p>fl: {eventSpace.fl}</p>
       <Link to={`/event-spaces/${id}/edit`}>Edit Event Space</Link>
     </div>
   );
@@ -44,7 +44,7 @@ const EventSpace = ({name, capacity, fl}) => {
 
 EventSpace.propTypes = {
   name: PropTypes.string, 
-  location: PropTypes.string, 
+  fl: PropTypes.string, 
 };
 
 export default EventSpace;
