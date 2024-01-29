@@ -17,31 +17,29 @@ function MeetingRooms() {
     <div className="meetingRooms">
       <section>
         <div className="meetingRoom-search">
-        <h4>Find available rooms</h4>
+          <h4>Find available rooms</h4>
           <form>
-            <label htmlFor="title">Start:</label>
-            <input
-              id="start"
-              type="datetime-local"
-              required
-            />
-            <label htmlFor="title">End:</label>
-            <input
-              id="end"
-              type="datetime-local"
-              required
-            />
-            <label htmlFor="floor">Floor:</label>
-            <input id="floor" type="text" placeholder="Floor Number" />
-            <label htmlFor="capacity">Capacity:</label>
-            <input id="capacity" type="number"/>
+            <div class="block">
+              <label htmlFor="title">Start:</label>
+              <input id="start" type="datetime-local" required />
+            </div>
+            <div class="block">
+              <label htmlFor="title">End:</label>
+              <input id="end" type="datetime-local" required />
+            </div>
+            <div class="block">
+              <label htmlFor="floor">Floor:</label>
+              <input id="floor" type="text" placeholder="Floor Number" />
+            </div>
+            <div class="block">
+              <label htmlFor="capacity">Capacity:</label>
+              <input id="capacity" type="number" />
+            </div>
           </form>
-          <p>floor</p>
-          <p>capacity</p>
           <button>Find</button>
         </div>
         <hr className="meetingRoom-newbreak" />
-        <div>
+        <div className="meetingRooms-list">
           {meetingRooms.map((meetingRoom) => (
             <SingleMeetingRoom key={meetingRoom.id} meetingRoom={meetingRoom} />
           ))}
