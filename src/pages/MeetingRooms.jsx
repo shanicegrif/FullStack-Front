@@ -8,26 +8,43 @@ function MeetingRooms() {
 
   useEffect(() => {
     fetch(`${API}/meetingRooms`)
-    .then((response) => response.json())
-    .then((data) => setmeetingRooms(data.data.payload))
-    .catch((error) => console.error(error))
+      .then((response) => response.json())
+      .then((data) => setmeetingRooms(data.data.payload))
+      .catch((error) => console.error(error));
   }, []);
 
   return (
     <div className="meetingRooms">
       <section>
-        <div>
-          <h2>Find available rooms</h2>
-          <p>start</p>
-          <p>end</p>
+        <div className="meetingRoom-search">
+        <h4>Find available rooms</h4>
+          <form>
+            <label htmlFor="title">Start:</label>
+            <input
+              id="start"
+              type="datetime-local"
+              required
+            />
+            <label htmlFor="title">End:</label>
+            <input
+              id="end"
+              type="datetime-local"
+              required
+            />
+            <label htmlFor="floor">Floor:</label>
+            <input id="floor" type="text" placeholder="Floor Number" />
+            <label htmlFor="capacity">Capacity:</label>
+            <input id="capacity" type="number"/>
+          </form>
           <p>floor</p>
           <p>capacity</p>
           <button>Find</button>
         </div>
+        <hr className="meetingRoom-newbreak" />
         <div>
-            {meetingRooms.map((meetingRoom) => (
-              <SingleMeetingRoom key={meetingRoom.meetingRoom_id} meetingRoom={meetingRoom} />
-            ))}
+          {meetingRooms.map((meetingRoom) => (
+            <SingleMeetingRoom key={meetingRoom.id} meetingRoom={meetingRoom} />
+          ))}
         </div>
       </section>
     </div>
