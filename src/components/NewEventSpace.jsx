@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getMeetingRooms } from '../api/fetch';
+import EventSpace from '../pages/EventSpace';
 
 const NewEventSpace = () => {
   const [eventSpaces, setEventSpaces] = useState([]);

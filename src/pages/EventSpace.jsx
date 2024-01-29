@@ -3,9 +3,9 @@ import  { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types'; // Import PropTypes
 
-import { getOneMeetingRoom } from '../api/fetch';
+import { getMeetingRooms } from '../api/fetch';
 
-const EventSpace = ({ name, location }) => {
+const EventSpace = () => {
   const { id } = useParams();
   const [eventSpace, setEventSpace] = useState(null);
 
@@ -14,7 +14,7 @@ const EventSpace = ({ name, location }) => {
   useEffect(() => {
     const fetchEventSpace = async () => {
       try {
-        const space = await getOneMeetingRoom(id);
+        const space = await getMeetingRooms(id);
         setEventSpace(space);
       } catch (error) {
         console.error(`Error fetching event space with id ${id}:`, error);
