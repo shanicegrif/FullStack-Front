@@ -7,7 +7,6 @@ import NewMeetingRooms from "./pages/NewMeetingRooms";
 import SingleMeetingRoom from "./pages/SingleMeetingRoom";
 import FourOFour from "./pages/FourOFour";
 import Home from "./pages/Home";
-import NewRoom from "./pages/NewRoom";
 import BookingDetails from "./pages/BookingDetails";
 import NewEventSpace from './components/NewEventSpace';
 
@@ -26,7 +25,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="*" element={<FourOFour />} />
             <Route path="/bookings" element={<Bookings/>} />
-            <Route path="/bookings/new" element={<NewRoom/>} />
             <Route path="/meetingRooms" element={<MeetingRooms/>} />
             <Route path="/meetingRooms/:id" element={<SingleMeetingRoom/>} />
             <Route path="/meetingRooms/new" element={<NewMeetingRooms/>} />
