@@ -10,7 +10,7 @@ export default function NavBar() {
         <button>Bookings</button>
       </Link>
       <Link to="/meetingRooms/new">
-        <button>New Meeting Rooms</button>
+        <button>New Meeting Room</button>
       </Link>
     </nav>
   );

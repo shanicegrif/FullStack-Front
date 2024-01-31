@@ -5,7 +5,6 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,13 +22,14 @@ a:hover {
 }
 
 body {
-  position: relative;
+  /* position: relative; */
   min-height: 100vh;
+  background-color: rgb(183, 156, 120);
 }
 
- ul {
-    list-style-type: none;
-  }
+ul {
+  list-style-type: none;
+}
 
 .container {
   padding-top: 3rem;
@@ -44,7 +44,9 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: grey;
+  box-shadow: 2px 2px 2px black;
+  color: white;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -56,28 +58,53 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  && button {
+    margin-right: 20px;
+  }
+}
+
 form {
   display: flex;
   flex-direction: column;
   align-items: start;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   && input {
     height: 20px;
     margin-left: 20px;
+    background-color: white;
+    color: black;
+    padding: 12px 0px;
+    padding-left: 5px;
   }
 }
 
 .meeting-card {
   width: 100%;
   border-radius: 10px;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   border: 2px solid black;
+  box-shadow: 5px 5px 5px black;
+  background-color: rgb(117, 180, 22);
   margin-bottom: 10px;
   padding-left: 30px;
+  && img {
+    width: 50px;
+    border-radius: 50%;
+    float: left;
+  }
 }
 
 .booking-card {
   width: 100%;
   border-radius: 10px;
   border: 2px solid black;
+  box-shadow: 5px 5px 5px black;
+  background-color: rgb(117, 180, 22);
   margin-bottom: 10px;
   padding-left: 30px;
 }
