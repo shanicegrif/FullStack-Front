@@ -27,7 +27,6 @@ export default function NewMeetingRoomForm(){
 
     return(
         <div className="new-room-form-container">
-            <h2>Create a Room</h2>
             <form>
                 <label>Room Name:</label>
                 <input type="text" id="name" value={roomInfo.name} onChange={handleTextChange} placeholder="name of the room" required />

@@ -1,13 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from "./components/Navbar"
-
 import Bookings from "./pages/Bookings";
 import MeetingRooms from "./pages/MeetingRooms";
 import NewMeetingRooms from "./pages/NewMeetingRooms";
 import SingleMeetingRoom from "./pages/SingleMeetingRoom";
 import FourOFour from "./pages/FourOFour";
 import Home from "./pages/Home";
-import BookingDetails from "./pages/BookingDetails";
+
 
 
 import './App.css';
@@ -28,7 +27,7 @@ function App() {
             <Route path="/meetingRooms" element={<MeetingRooms/>} />
             <Route path="/meetingRooms/:id" element={<SingleMeetingRoom/>} />
             <Route path="/meetingRooms/new" element={<NewMeetingRooms/>} />
-            <Route path="/meetingRooms/:id/bookings" element={<BookingDetails/>} />          
+            {/* <Route path="/meetingRooms/:id/bookings" element={<BookingDetails/>} />           */}
             </Routes>
         </main>
       </Router>
