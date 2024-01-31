@@ -12,9 +12,6 @@ export default function NavBar() {
       <Link to="/meetingRooms/new">
         <button>New Meeting Rooms</button>
       </Link>
-      <Link to="/neweventspace">
-        <button>New Event Space</button>
-      </Link>
     </nav>
   );
 }
