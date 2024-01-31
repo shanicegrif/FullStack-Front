@@ -1,41 +1,96 @@
 import { useState } from "react";
-// import { postNewRoom } from "../api/fetch";
 import { useNavigate } from "react-router-dom";
+const API = import.meta.env.VITE_API_URL;
 
-export default function NewMeetingRoomForm(){
-    const [ roomInfo, setRoomInfo ] = useState({
-        name:"",
-        capacity:0,
-        floor:1,
-    });
-    const nav = useNavigate();
+export default function NewMeetingRoomForm() {
+  const [roomInfo, setRoomInfo] = useState({
+    name: "",
+    capacity: "",
+    floor: "",
+  });
+  const navigate = useNavigate();
 
-    const handleTextChange = (event) => {
-        setRoomInfo({ ...roomInfo, [event.target.id]: event.target.value });
-    };
+  const handleTextChange = (event) => {
+    const { id, value } = event.target;
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    if (id === "floor") {
+      const parsedValue = value.trim() !== "" ? parseInt(value, 10) : "";
 
-        postNewRoom(roomInfo)
-          .then(() => {
-            console.log("create success!");
-            // put nav here
-          })
-          .catch((err) => console.error(err));
-    };
+      if (!isNaN(parsedValue) || value.trim() === "") {
+        setRoomInfo({ ...roomInfo, [id]: parsedValue });
+      }
+    } else if (id === "capacity") {
+      const parsedValue = value.trim() !== "" ? parseInt(value, 10) : "";
 
-    return(
-        <div className="new-room-form-container">
-            <form>
-                <label>Room Name:</label>
-                <input type="text" id="name" value={roomInfo.name} onChange={handleTextChange} placeholder="name of the room" required />
-                <label>Floor:</label>
-                <input type="text" id="capacity" value={roomInfo.floor} onChange={handleTextChange} placeholder="# of floor" required />
-                <label>Capacity:</label>
-                <input type="number" id="floor" value={roomInfo.capacity} onChange={handleTextChange} placeholder="room capacity" required />
-                <input className="form-submit" type="submit" value="Submit" />
-            </form>
+      if (!isNaN(parsedValue) || value.trim() === "") {
+        setRoomInfo({ ...roomInfo, [id]: parsedValue });
+      }
+    } else {
+      setRoomInfo({ ...roomInfo, [id]: value });
+    }
+  };
+
+  const addMeeting = () => {
+    fetch(`${API}/meetingRooms`, {
+      method: "POST",
+      body: JSON.stringify(roomInfo),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(() => {
+        navigate(`/meetingRooms`);
+      })
+      .catch((error) => console.error("catch", error));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    addMeeting();
+  };
+
+  return (
+    <div className="new-room-form-container">
+      <form onSubmit={handleSubmit}>
+        <div className="block">
+          <label>Room Name:</label>
+          <input
+            type="text"
+            id="name"
+            value={roomInfo.name}
+            onChange={handleTextChange}
+            placeholder="name of the room"
+            required
+          />
         </div>
-    )
+        <div className="block">
+          <label>Floor:</label>
+          <input
+            type="number"
+            id="floor"
+            value={roomInfo.floor}
+            onChange={handleTextChange}
+            placeholder="# of floor"
+            required
+          />
+        </div>
+        <div className="block">
+          <label>Capacity:</label>
+          <input
+            type="number"
+            id="capacity"
+            value={roomInfo.capacity}
+            onChange={handleTextChange}
+            placeholder="room capacity"
+            required
+          />
+        </div>
+        <div className="new-room-form-button">
+          <button type="submit" className="newButton">
+            Create Room
+          </button>
+        </div>
+      </form>
+    </div>
+  );
 }
