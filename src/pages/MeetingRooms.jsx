@@ -41,7 +41,7 @@ function MeetingRooms() {
         <hr className="meetingRoom-newbreak" />
         <div className="meetingRooms-list">
           {meetingRooms.map((meetingRoom) => (
-            <SingleMeetingRoom key={meetingRoom.id} meetingRoom={meetingRoom} />
+            <SingleMeetingRoom key={meetingRoom.id} meetingRoom={meetingRoom} id={meetingRoom.room_id}/>
           ))}
         </div>
       </section>

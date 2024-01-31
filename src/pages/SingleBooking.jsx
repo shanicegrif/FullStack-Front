@@ -3,7 +3,6 @@ import React from "react";
 const SingleBooking = ({ booking }) => {
   const { meeting_name, startdate, enddate } = booking;
 
-  // Function to format the date and time
   const formatDateTime = (dateTimeString) => {
     const options = {
       weekday: 'long',
