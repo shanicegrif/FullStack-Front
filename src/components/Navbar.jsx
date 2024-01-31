@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
   return (
     <nav>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
       <Link to="/meetingRooms">
         <button>Meeting Rooms</button>
       </Link>
