@@ -91,9 +91,9 @@ form {
   box-shadow: 5px 5px 5px black;
   background-color: rgb(117, 180, 22);
   margin-bottom: 10px;
-  padding-left: 30px;
+  padding: 10px 0px 10px 30px;
   && img {
-    width: 50px;
+    width: 30px;
     border-radius: 50%;
     float: left;
   }
