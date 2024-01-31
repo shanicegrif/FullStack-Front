@@ -98,10 +98,18 @@ form {
     float: left;
   }
 }
-.show-meeting{
+.show-meeting div{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: larger;
+  && img {
+    float: right;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
 }
 
 .booking-card {

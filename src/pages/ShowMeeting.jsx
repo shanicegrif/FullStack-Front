@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import SingleBooking from "./SingleBooking";
+import grandHallImage from "/src/assets/grand-hall.jpeg";
+import capImage from "/src/assets/cap-img.png";
+import buildingImage from "/src/assets/building.jpeg";
 const API = import.meta.env.VITE_API_URL;
 
 const ShowMeeting = () => {
@@ -50,9 +54,20 @@ const ShowMeeting = () => {
   return (
     <div>
       <div className="show-meeting">
-        <h3>{meetingRoom.name}</h3>
-        <p>Capacity: {meetingRoom.capacity}</p>
-        <p>Floor: {meetingRoom.floor}</p>
+        <div className="show-meeting-info">
+          <div>
+            <img src={grandHallImage} alt={`meeting room`} />
+            <h3>{meetingRoom.name}</h3>
+          </div>
+          <div>
+            <img src={capImage} alt="Capacity icon" />
+            <p>Capacity: {meetingRoom.capacity}</p>
+          </div>
+          <div>
+            <img src={buildingImage} alt="Floor icon" />
+            <p>Floor: {meetingRoom.floor}</p>
+          </div>
+        </div>
       </div>
       <hr />
       <p>Book Room:</p>
@@ -100,6 +115,11 @@ const ShowMeeting = () => {
         <button type="submit">Submit</button>
       </form>
       <hr />
+      <div className="meetingRoom-bookinglist">
+        {bookings.map((booking) => (
+          <SingleBooking key={booking.id} booking={booking} />
+        ))}
+      </div>
     </div>
   );
 };
