@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'; // Assuming you are using React Router
+import React from "react";
 
 const HomePage = () => {
   return (
