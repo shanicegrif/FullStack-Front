@@ -131,3 +131,13 @@ form {
   margin-bottom: 10px;
   padding-left: 30px;
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  height: 3rem;
+  padding-top: 10px;
+  text-align: center;
+  color: black;
+}
